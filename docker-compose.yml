@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   apache:
-    container_name: template_docker_apache
+    container_name: symfony_blog_hexagonal_apache
     build: ./docker/build/apache
     ports:
       - '8000:80'
@@ -17,7 +17,7 @@ services:
       - './docker/etc/apache/ssl/:/etc/apache2/conf/ssl'
       - './app/symfony:/var/www/symfony'
   mysql:
-    container_name: template_docker_mysql
+    container_name: symfony_blog_hexagonal_mysql
     image: mysql:5.7
     ports:
       - "3306:3306"
@@ -28,8 +28,13 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: symfony_db
 
+  mailer:
+    container_name: symfony_blog_hexagonal_mailcatcher
+    image: schickling/mailcatcher
+    ports: ["1025", "1080"]
+
   phpmyadmin:
-    container_name: template_docker_phpmyadmin
+    container_name: symfony_blog_hexagonal_phpmyadmin
     ports:
       - '8001:80'
     image: nazarpc/phpmyadmin

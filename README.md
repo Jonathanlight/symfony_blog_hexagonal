@@ -1,11 +1,11 @@
-# Template_docker_php_8.1
-- Template docker PHP 8.1 Apache
+# symfony_blog_hexagonal.1
+- Project Symfony in Archi Hexagonal
 
 ### Requirements
 ---
 
 - PHP 8.1
-- Symfony 6.3 
+- Symfony 6.4
 - Apache 2.4
 - MySQL 5.7
 - Composer 2
@@ -17,8 +17,8 @@
 ---
 
 ```
-git clone https://github.com/Jonathanlight/template_docker_php_8.1.git
-$ cd template_docker_php_8
+git clone https://github.com/Jonathanlight/symfony_blog_hexagonal.git
+$ cd symfony_blog_hexagonal
 
 # build docker containers
 $ make docker-build
